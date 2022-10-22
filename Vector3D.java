@@ -32,7 +32,7 @@ public class Vector3D {
         return vector;
     }
 
-    public Vector3D multiplyByScalar(int scalar) {
+    public Vector3D multiplyByScalar(double scalar) {
         final Vector3D vector = new Vector3D(this.x * scalar, this.y * scalar, this.z * scalar);
         return vector;
     }
