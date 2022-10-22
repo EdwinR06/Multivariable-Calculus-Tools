@@ -39,4 +39,8 @@ public class Vector3D {
         final Vector3D vector = new Vector3D(x, y, z);
         return vector;
     }
+
+    public double magnitude(Vector3D a) {
+        return Math.sqrt((a.x * a.x) + (a.y * a.y) + (a.z * a.z));
+    }
 }
