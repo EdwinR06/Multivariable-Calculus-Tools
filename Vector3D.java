@@ -58,5 +58,14 @@ public class Vector3D {
         return vector;
     }
 
+    public Vector3D convertToSpherical() {
+        final double r = Math.sqrt(this.x * this.x + this.y * this.y);
+        final double rho = Math.sqrt(r * r + this.z * this.z);
+        final double theta = Math.atan(this.y / this.x);
+        final double phi = Math.atan(r / this.z);
+        final Vector3D vector = new Vector3D(rho, theta, phi);
+        return vector;
+    }
+
 
 }
