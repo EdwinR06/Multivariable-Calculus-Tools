@@ -43,4 +43,9 @@ public class Vector3D {
     public double magnitude(Vector3D a) {
         return Math.sqrt((a.x * a.x) + (a.y * a.y) + (a.z * a.z));
     }
+
+    public double angleBetween(Vector3D a, Vector3D b) {
+        final double angle = Math.acos(dotProduct(a, b) / (magnitude(a) * magnitude(b)));
+        return angle;
+    }
 }
