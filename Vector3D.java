@@ -24,4 +24,11 @@ public class Vector3D {
         final Vector3D vector = new Vector3D(a.x * scalar, a.y * scalar, a.z * scalar);
         return vector;
     }
+
+    public int dotProduct(Vector3D a, Vector3D b) {
+        final int product = (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
+        return product;
+    }
+
+ 
 }
