@@ -1,4 +1,4 @@
-public class workspace {
+public class Workspace {
     public static void main(String args[])  
     {  
         final Vector3D vector1 = new Vector3D(5, 6, 1);
