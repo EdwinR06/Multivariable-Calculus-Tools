@@ -10,12 +10,12 @@ public class Vector3D {
         this.z = z;
     }
 
-    public Vector3D addition3D(Vector3D a, Vector3D b) {
+    public Vector3D add3D(Vector3D a, Vector3D b) {
         final Vector3D vector = new Vector3D(a.x + b.x, a.y + b.y, a.z + b.z);
         return vector;
     }
 
-    public Vector3D subtraction3D(Vector3D a, Vector3D b) {
+    public Vector3D subtract3D(Vector3D a, Vector3D b) {
         final Vector3D vector = new Vector3D(a.x - b.x, a.y - b.y, a.z - b.z);
         return vector;
     }
