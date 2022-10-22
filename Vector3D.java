@@ -10,6 +10,18 @@ public class Vector3D {
         this.z = z;
     }
 
+    public double getX() {
+        return this.x;
+    }
+
+    public double getY(){
+        return this.y;
+    }
+
+    public double getZ() {
+        return this.z;
+    }
+    
     public Vector3D add(Vector3D a) {
         final Vector3D vector = new Vector3D(this.x + a.x, this.y + a.y, this.z + a.z);
         return vector;
