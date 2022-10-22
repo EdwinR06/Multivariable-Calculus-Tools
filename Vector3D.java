@@ -55,8 +55,8 @@ public class Vector3D {
         return Math.sqrt((this.x * this.x) + (this.y * this.y) + (this.z * this.z));
     }
 
-    public double angleBetween(Vector3D a, Vector3D b) {
-        final double angle = Math.acos(this.dotProduct(a) / (this.magnitude() * this.magnitude()));
+    public double angleBetween(Vector3D a) {
+        final double angle = Math.acos(this.dotProduct(a) / (this.magnitude() * a.magnitude()));
         return angle;
     }
 
