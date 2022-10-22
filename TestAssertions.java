@@ -18,5 +18,10 @@ public class TestAssertions {
         Double[] resultSub = {subtraction.getX(), subtraction.getY(), subtraction.getZ()};
         Double[] expectedSub = {4.0, 4.0, -2.0};
         assertArrayEquals(expectedSub, resultSub);
+
+        final Vector3D multiply = vector1.multiplyByScalar(2);
+        Double[] resultMultiply = {multiply.getX(), multiply.getY(), multiply.getZ()};
+        Double[] expectedMultiply = {10.0, 12.0, 2.0};
+        assertArrayEquals(expectedMultiply, resultMultiply);
     }
 }
