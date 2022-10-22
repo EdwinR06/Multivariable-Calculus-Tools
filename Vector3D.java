@@ -48,7 +48,15 @@ public class Vector3D {
         return angle;
     }
 
-    
+    public Vector3D convertToCylindrical() {
+        final double r = Math.sqrt(this.x * this.x + this.y * this.y);
+        final double theta = Math.atan(this.y / this.x);
+        final double x = r * Math.cos(theta);
+        final double y = r * Math.sin(theta);
+        final double z = this.z;
+        final Vector3D vector = new Vector3D(x, y, z);
+        return vector;
+    }
 
 
 }
