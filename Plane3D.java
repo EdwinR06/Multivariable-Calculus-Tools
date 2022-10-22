@@ -11,5 +11,21 @@ public class Plane3D {
         this.z = z;
         this.d = d;
     }
+
+    public double getX() {
+        return this.x;
+    }
+
+    public double getY() {
+        return this.y;
+    }
+
+    public double getZ() {
+        return this.z;
+    }
+
+    public double getD() {
+        return this.d;
+    }
     
 }
