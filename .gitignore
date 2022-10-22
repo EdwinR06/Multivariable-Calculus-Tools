@@ -1,2 +1,5 @@
 # .gitignore
 *.class
+
+# Package Files #
+*.jar
