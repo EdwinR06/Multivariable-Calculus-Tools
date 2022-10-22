@@ -1,10 +1,10 @@
 public class Vector3D {
 
-    private int x;
-    private int y;
-    private int z;
+    private double x;
+    private double y;
+    private double z;
     
-    public Vector3D(int x, int y, int z) {
+    public Vector3D(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -25,16 +25,16 @@ public class Vector3D {
         return vector;
     }
 
-    public int dotProduct(Vector3D a) {
-        final int product = (this.x * a.x) + (this.y * a.y) + (this.z * a.z);
+    public double dotProduct(Vector3D a) {
+        final double product = (this.x * a.x) + (this.y * a.y) + (this.z * a.z);
         return product;
     }
 
     // Not commutative, follows right hand rule
     public Vector3D crossProduct(Vector3D a) {
-        final int x = (this.y * a.z) - (this.z * a.y);
-        final int y = (this.z * a.x) - (this.x * a.z);
-        final int z = (this.x * a.y) - (this.y * a.x);
+        final double x = (this.y * a.z) - (this.z * a.y);
+        final double y = (this.z * a.x) - (this.x * a.z);
+        final double z = (this.x * a.y) - (this.y * a.x);
         final Vector3D vector = new Vector3D(x, y, z);
         return vector;
     }
@@ -47,6 +47,8 @@ public class Vector3D {
         final double angle = Math.acos(this.dotProduct(a) / (this.magnitude() * this.magnitude()));
         return angle;
     }
+
+    
 
 
 }
