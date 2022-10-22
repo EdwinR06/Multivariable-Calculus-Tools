@@ -19,4 +19,9 @@ public class Vector3D {
         final Vector3D vector = new Vector3D(a.x - b.x, a.y - b.y, a.z - b.z);
         return vector;
     }
+
+    public Vector3D multiply3DByScalar(Vector3D a, int scalar) {
+        final Vector3D vector = new Vector3D(a.x * scalar, a.y * scalar, a.z * scalar);
+        return vector;
+    }
 }
