@@ -10,42 +10,43 @@ public class Vector3D {
         this.z = z;
     }
 
-    public Vector3D add(Vector3D a, Vector3D b) {
-        final Vector3D vector = new Vector3D(a.x + b.x, a.y + b.y, a.z + b.z);
+    public Vector3D add(Vector3D a) {
+        final Vector3D vector = new Vector3D(this.x + a.x, this.y + a.y, this.z + a.z);
         return vector;
     }
 
-    public Vector3D subtract(Vector3D a, Vector3D b) {
-        final Vector3D vector = new Vector3D(a.x - b.x, a.y - b.y, a.z - b.z);
+    public Vector3D subtract(Vector3D a) {
+        final Vector3D vector = new Vector3D(this.x - a.x, this.y - a.y, this.z - a.z);
         return vector;
     }
 
-    public Vector3D multiplyByScalar(Vector3D a, int scalar) {
-        final Vector3D vector = new Vector3D(a.x * scalar, a.y * scalar, a.z * scalar);
+    public Vector3D multiplyByScalar(int scalar) {
+        final Vector3D vector = new Vector3D(this.x * scalar, this.y * scalar, this.z * scalar);
         return vector;
     }
 
-    public int dotProduct(Vector3D a, Vector3D b) {
-        final int product = (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
+    public int dotProduct(Vector3D a) {
+        final int product = (this.x * a.x) + (this.y * a.y) + (this.z * a.z);
         return product;
     }
 
-
     // Not commutative, follows right hand rule
-    public Vector3D crossProduct(Vector3D a, Vector3D b) {
-        final int x = (a.y * b.z) - (a.z * b.y);
-        final int y = (a.z * b.x) - (a.x * b.z);
-        final int z = (a.x * b.y) - (a.y * b.x);
+    public Vector3D crossProduct(Vector3D a) {
+        final int x = (this.y * a.z) - (this.z * a.y);
+        final int y = (this.z * a.x) - (this.x * a.z);
+        final int z = (this.x * a.y) - (this.y * a.x);
         final Vector3D vector = new Vector3D(x, y, z);
         return vector;
     }
 
-    public double magnitude(Vector3D a) {
-        return Math.sqrt((a.x * a.x) + (a.y * a.y) + (a.z * a.z));
+    public double magnitude() {
+        return Math.sqrt((this.x * this.x) + (this.y * this.y) + (this.z * this.z));
     }
 
     public double angleBetween(Vector3D a, Vector3D b) {
-        final double angle = Math.acos(dotProduct(a, b) / (magnitude(a) * magnitude(b)));
+        final double angle = Math.acos(this.dotProduct(a) / (this.magnitude() * this.magnitude()));
         return angle;
     }
+
+
 }
