@@ -15,5 +15,8 @@ public class Vector3D {
         return vector;
     }
 
-
+    public Vector3D subtraction3D(Vector3D a, Vector3D b) {
+        final Vector3D vector = new Vector3D(a.x - b.x, a.y - b.y, a.z - b.z);
+        return vector;
+    }
 }
