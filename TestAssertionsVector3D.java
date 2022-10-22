@@ -1,7 +1,9 @@
+
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
-public class TestAssertions {
+public class TestAssertionsVector3D {
 
     @Test
     public void testAssertions() {
@@ -23,5 +25,6 @@ public class TestAssertions {
         Double[] resultMultiply = {multiply.getX(), multiply.getY(), multiply.getZ()};
         Double[] expectedMultiply = {10.0, 12.0, 2.0};
         assertArrayEquals(expectedMultiply, resultMultiply);
+
     }
 }
