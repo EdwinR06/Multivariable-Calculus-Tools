@@ -26,5 +26,8 @@ public class TestAssertionsVector3D {
         Double[] expectedMultiply = {10.0, 12.0, 2.0};
         assertArrayEquals(expectedMultiply, resultMultiply);
 
+        final double dotProduct = vector1.dotProduct(vector2);
+        assertTrue(dotProduct == 20.0);
+
     }
 }
