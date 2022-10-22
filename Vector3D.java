@@ -30,5 +30,13 @@ public class Vector3D {
         return product;
     }
 
- 
+
+    // Not commutative, follows right hand rule
+    public Vector3D crossProduct(Vector3D a, Vector3D b) {
+        final int x = (a.y * b.z) - (a.z * b.y);
+        final int y = (a.z * b.x) - (a.x * b.z);
+        final int z = (a.x * b.y) - (a.y * b.x);
+        final Vector3D vector = new Vector3D(x, y, z);
+        return vector;
+    }
 }
