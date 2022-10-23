@@ -56,15 +56,15 @@ public class Vector3D {
     }
 
     public double angleBetween(Vector3D a) {
-        final double angle = Math.acos(this.dotProduct(a) / (this.magnitude() * a.magnitude()));
+        final double angle = Math.toDegrees(Math.acos(this.dotProduct(a) / (this.magnitude() * a.magnitude())));
         return angle;
     }
 
     public Vector3D convertToCylindrical() {
         final double r = Math.sqrt(this.x * this.x + this.y * this.y);
-        final double theta = Math.atan(this.y / this.x);
-        final double x = r * Math.cos(theta);
-        final double y = r * Math.sin(theta);
+        final double theta = Math.toDegrees(Math.atan(this.y / this.x));
+        final double x = r * Math.toDegrees(Math.cos(theta));
+        final double y = r * Math.toDegrees(Math.sin(theta));
         final double z = this.z;
         final Vector3D vector = new Vector3D(x, y, z);
         return vector;
@@ -73,8 +73,8 @@ public class Vector3D {
     public Vector3D convertToSpherical() {
         final double r = Math.sqrt(this.x * this.x + this.y * this.y);
         final double rho = Math.sqrt(r * r + this.z * this.z);
-        final double theta = Math.atan(this.y / this.x);
-        final double phi = Math.atan(r / this.z);
+        final double theta = Math.toDegrees(Math.atan(this.y / this.x));
+        final double phi = Math.toDegrees(Math.atan(r / this.z));
         final Vector3D vector = new Vector3D(rho, theta, phi);
         return vector;
     }
