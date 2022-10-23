@@ -43,7 +43,8 @@ public class TestAssertionsVector3D {
         final double magnitude = vector1.magnitude();
         assertTrue(magnitude == Math.sqrt(25+36+1));
 
-        
+        final double angle = vector1.angleBetween(vector2);
+        assertEquals(47.246607, angle, .001);
 
     }
 }
