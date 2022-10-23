@@ -40,5 +40,10 @@ public class TestAssertionsVector3D {
         // Cross Product is not commutative
         assertFalse(resultCross1 == resultCross2);
 
+        final double magnitude = vector1.magnitude();
+        assertTrue(magnitude == Math.sqrt(25+36+1));
+
+        
+
     }
 }
