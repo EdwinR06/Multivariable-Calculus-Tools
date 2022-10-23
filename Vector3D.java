@@ -61,20 +61,32 @@ public class Vector3D {
     }
 
     public Vector3D convertToCylindrical() {
+        // Magnitude of XY Vector
         final double r = Math.sqrt(this.x * this.x + this.y * this.y);
+
+        // Polar angle
         final double theta = Math.toDegrees(Math.atan(this.y / this.x));
-        final double x = r * Math.toDegrees(Math.cos(theta));
-        final double y = r * Math.toDegrees(Math.sin(theta));
+
+        // final double x = r * Math.cos(theta);
+        // final double y = r * Math.sin(theta);
+
         final double z = this.z;
-        final Vector3D vector = new Vector3D(x, y, z);
+        final Vector3D vector = new Vector3D(r, theta, z);
         return vector;
     }
 
     public Vector3D convertToSpherical() {
         final double r = Math.sqrt(this.x * this.x + this.y * this.y);
+
+        //distance from the center
         final double rho = Math.sqrt(r * r + this.z * this.z);
+
+        // Polar angle (latitude)
         final double theta = Math.toDegrees(Math.atan(this.y / this.x));
+
+        // angle between the positive direction of z-axis and OP
         final double phi = Math.toDegrees(Math.atan(r / this.z));
+
         final Vector3D vector = new Vector3D(rho, theta, phi);
         return vector;
     }
