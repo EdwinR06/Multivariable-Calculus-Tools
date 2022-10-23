@@ -46,5 +46,15 @@ public class TestAssertionsVector3D {
         final double angle = vector1.angleBetween(vector2);
         assertEquals(47.246607, angle, .001);
 
+        final Vector3D cylindrical = vector1.convertToCylindrical();
+        Double[] resultCyl = {cylindrical.getX(), cylindrical.getY(), cylindrical.getZ()};
+        Double[] expectedCyl = {7.810249675906654, 50.19442890773481, 1.0};
+        assertArrayEquals(expectedCyl, resultCyl);
+
+        final Vector3D spherical = vector1.convertToSpherical();
+        Double[] resultSphere = {spherical.getX(), spherical.getY(), spherical.getZ()};
+        Double[] expectedSphere = {7.87400787401181, 50.19442890773481, 82.7037246989833};
+        assertArrayEquals(expectedSphere, resultSphere);
+    
     }
 }
