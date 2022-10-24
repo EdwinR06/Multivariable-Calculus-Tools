@@ -27,4 +27,11 @@ public class Point3D {
         return vector;
     } 
 
+    public double distanceFromPointToPlane(Plane3D a) {
+        final double top = Math.abs(this.x * a.getX() + this.y * a.getY() + this.z * a.getZ() + a.getD());
+        final double bottom = Math.sqrt(a.getX() * a.getX() + a.getY() * a.getY() + a.getZ() * a.getZ());
+        final double distance = top / bottom;
+        return distance;
+    }
+
 }
