@@ -6,25 +6,50 @@ public class Workspace {
 
         System.out.println("Vector Calculator Operation: ");
         String operation = scanner.nextLine();
-        
-        System.out.println("Enter Vector One X: ");
-        double x1 = scanner.nextDouble();
-        System.out.println("Enter Vector One Y: ");
-        double y1 = scanner.nextDouble();
-        System.out.println("Enter Vector One Z: ");
-        double z1 = scanner.nextDouble();
-        final Vector3D vector1 = new Vector3D(x1, y1, z1);
-        Vector3D vector2 = new Vector3D(0, 0, 0);
 
-        if(operation != "multiply by scalar" || operation != "magnitude" || operation != "cylindrical coordinates" || operation != "spherical coordinates") {
-            System.out.println("Enter Vector Two X: ");
-            double x2 = scanner.nextDouble();
-            System.out.println("Enter Vector Two Y: ");
-            double y2 = scanner.nextDouble();
-            System.out.println("Enter Vector Two Z: ");
-            double z2 = scanner.nextDouble();
-            vector2 = new Vector3D(x2, y2, z2);
+        Vector3D vector2 = new Vector3D(0, 0, 0);
+        Vector3D vector1 = new Vector3D(0, 0, 0);
+        Point3D point2 = new Point3D(0, 0, 0);
+        Point3D point1 = new Point3D(0, 0, 0);
+        if(operation.equals("generate vector")) {
+            System.out.println("Enter Point One X: ");
+            double xP1 = scanner.nextDouble();
+            System.out.println("Enter Point One Y: ");
+            double yP1 = scanner.nextDouble();
+            System.out.println("Enter Point One Z: ");
+            double zP1 = scanner.nextDouble();
+            point1 = new Point3D(xP1, yP1, zP1);
+
+            System.out.println("Enter Point Two X: ");
+            double xP2 = scanner.nextDouble();
+            System.out.println("Enter Point Two Y: ");
+            double yP2 = scanner.nextDouble();
+            System.out.println("Enter Point Two Z: ");
+            double zP2 = scanner.nextDouble();
+            point2 = new Point3D(xP2, yP2, zP2);
+        } else {
+            System.out.println("Enter Vector One X: ");
+            double x1 = scanner.nextDouble();
+            System.out.println("Enter Vector One Y: ");
+            double y1 = scanner.nextDouble();
+            System.out.println("Enter Vector One Z: ");
+            double z1 = scanner.nextDouble();
+            vector1 = new Vector3D(x1, y1, z1);
+
+            if(operation.equals("multiply by scalar") || !operation.equals("magnitude") || !operation.equals("cylindrical coordinates") || !operation.equals("spherical coordinates")) {
+                
+            } else {
+                System.out.println("Enter Vector Two X: ");
+                double x2 = scanner.nextDouble();
+                System.out.println("Enter Vector Two Y: ");
+                double y2 = scanner.nextDouble();
+                System.out.println("Enter Vector Two Z: ");
+                double z2 = scanner.nextDouble();
+                vector2 = new Vector3D(x2, y2, z2);
+            }
         } 
+        
+        
         
 
         System.out.println("Calculating ...");
@@ -86,7 +111,13 @@ public class Workspace {
                 final String sphere = String.format("Cylindrical Coordinates of Vector One:\nx: %f, y: %f, z: %f", spherical.getX(), spherical.getY(), spherical.getZ());
                 System.out.println(sphere.toString());
                 break;
-                
+            
+            case "generate vector":
+                final Vector3D vectorP = point1.vectorBetweenPoints(point2);
+                final String vectorPoints = String.format("x: %f, y: %f, z: %f", vectorP.getX(), vectorP.getY(), vectorP.getZ());
+                System.out.println(vectorPoints.toString()); 
+                break;
+
             default:
                 System.out.println("Input Valid Vector Operation");
         }
