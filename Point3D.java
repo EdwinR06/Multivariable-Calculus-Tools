@@ -21,4 +21,10 @@ public class Point3D {
         return this.z;
     }
 
+    public Vector3D vectorBetweenPoints(Point3D a) {
+        // Generates Vector3D as Change in XYZ from Current Point tp Point A
+        final Vector3D vector = new Vector3D(a.getX() - this.x, a.getY() - this.y, a.getZ() - this.z);
+        return vector;
+    } 
+
 }
