@@ -34,4 +34,14 @@ public class Point3D {
         return distance;
     }
 
+    public Plane3D planeFromPoints(Point3D b, Point3D c) {
+        final Vector3D AB = this.vectorBetweenPoints(b);
+        final Vector3D AC = this.vectorBetweenPoints(c);
+        final Vector3D normal = AB.crossProduct(AC);
+        final double d = normal.getX() * (-this.x) + normal.getY() * (-this.y) + normal.getZ() * (-this.z);
+
+        final Plane3D plane = new Plane3D(normal.getX(), normal.getY(),normal.getZ(),d);
+        return plane;
+    }
+
 }
