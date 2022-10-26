@@ -11,5 +11,12 @@ public class Sin {
 
     
 
+    public double calculateSin(double x) {
+        final double sin = this.coefficient * Math.pow(Math.sin(this.period * x), this.exponent);
+        return sin;
+    }
+
+    
+
     
 }
