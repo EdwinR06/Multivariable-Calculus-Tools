@@ -14,7 +14,14 @@ public class Cos {
         return cos;
     }
 
-    
+    public Sin cosDerivative() {
+        final Sin sin;
+        if(this.exponent > 1) {
+            sin = new Sin(-1 * this.coefficient * this.exponent * this.period, this.period, this.exponent - 1); 
+        } else {
+            sin = new Sin(-1 * this.coefficient * this.period, this.period, this.exponent); 
+        }
+        return sin;
+    }
 
-    
 }
