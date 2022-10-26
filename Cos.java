@@ -9,5 +9,12 @@ public class Cos {
         this.exponent = exponent;
     }
 
+    public double calculateCos(double x) {
+        final double cos = this.coefficient * Math.pow(Math.cos(this.period * x), this.exponent);
+        return cos;
+    }
+
+    
+
     
 }
