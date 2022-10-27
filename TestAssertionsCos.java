@@ -9,5 +9,10 @@ public class TestAssertionsCos {
         double resultCalculate = cos.calculateCos(Math.PI / 2);
         double expectedCalculate = 0;
         assertEquals(expectedCalculate, resultCalculate, 0.01);
+
+        Sin sin = cos.cosDerivative();
+        double[] resultCosDerivative = {sin.getCoefficient(), sin.getPeriod(), sin.getExponent()};
+        double[] expectedCosDerivative = {-1, 1, 1};
+        assertArrayEquals(expectedCosDerivative, resultCosDerivative, 0.01);
     }
 }
