@@ -55,6 +55,11 @@ public class TestAssertionsVector3D {
         Double[] resultSphere = {spherical.getX(), spherical.getY(), spherical.getZ()};
         Double[] expectedSphere = {7.87400787401181, 50.19442890773481, 82.7037246989833};
         assertArrayEquals(expectedSphere, resultSphere);
+
+        final Vector3D normalized = vector1.normalize();
+        double[] resultNormalized = {normalized.getX(), normalized.getY(), normalized.getZ()};
+        double[] expectedNormalized = {0.635, 0.762, 0.127};
+        assertArrayEquals(expectedNormalized, resultNormalized, 0.01);
     
     }
 }
