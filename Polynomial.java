@@ -6,4 +6,9 @@ public class Polynomial {
         this.coefficient = coefficient;
         this.exponent = exponent;
     }
+
+    public double calculatePoly(double x) {
+        final double result = this.coefficient * Math.pow(x, this.exponent);
+        return result;
+    }
 }
