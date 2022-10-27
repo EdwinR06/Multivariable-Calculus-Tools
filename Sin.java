@@ -24,5 +24,15 @@ public class Sin {
         return cos;
     }
 
+    public double getCoefficient() {
+        return this.coefficient;
+    }
 
+    public double getPeriod() {
+        return this.period;
+    }
+
+    public double getExponent() {
+        return this.exponent;
+    }
 }
