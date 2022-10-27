@@ -1,6 +1,4 @@
-import java.io.*;
 import java.util.*;
-import java.util.ListIterator;
 
 public class Equation {
     private int numTerms;
@@ -16,7 +14,10 @@ public class Equation {
 
 
         for (int i = 0; i < this.numTerms; i++) {
-            if(this.listTerms.get(i).get(0) == 1){
+            if(this.listTerms.get(i).get(0) == 0){
+                Polynomial polynomial = new Polynomial(this.listTerms.get(i).get(1), this.listTerms.get(i).get(2));
+                result += polynomial.calculatePoly(x);
+            } else if(this.listTerms.get(i).get(0) == 1){
                 Sin sin = new Sin(this.listTerms.get(i).get(1), this.listTerms.get(i).get(2), this.listTerms.get(i).get(3));
                 result += sin.calculateSin(x);
             } else if (this.listTerms.get(i).get(0) == 2){
