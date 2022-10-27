@@ -91,5 +91,11 @@ public class Vector3D {
         return vector;
     }
 
+    public Vector3D normalize(){
+        final double magnitude = this.magnitude();
+        final Vector3D vector = new Vector3D(this.x / magnitude, this.y / magnitude, this.z / magnitude);
+        return vector;
+    }
+
 
 }
