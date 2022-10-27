@@ -8,4 +8,8 @@ public class Constant {
     public double constantDerivative() {
         return 0;
     }
+
+    public double getConstant() {
+        return this.coefficient;
+    }
 }
