@@ -1,18 +1,14 @@
-import java.nio.channels.NonWritableChannelException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Workspace {
     public static void main(String args[]) {
         ArrayList<ArrayList<Integer>> equation = new ArrayList<ArrayList <Integer>>();
-        ArrayList<Integer> term1 = new ArrayList<Integer>();
-        term1.add(1);
-        term1.add(1);
-        term1.add(1);
-        term1.add(1);
+        ArrayList<Integer> term1 = new ArrayList<Integer>(Arrays.asList(0, 1, 1)); 
         equation.add(term1);
         Equation equation1 = new Equation(equation);
-        System.out.println(equation1.equationAtPoint(0));
+        System.out.println(equation1.equationAtPoint(1));
         
 
         Scanner scanner = new Scanner(System.in);
