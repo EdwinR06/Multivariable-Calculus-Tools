@@ -11,4 +11,12 @@ public class Polynomial {
         final double result = this.coefficient * Math.pow(x, this.exponent);
         return result;
     }
+
+    public double getCoefficient() {
+        return this.coefficient;
+    }
+
+    public double getExponent() {
+        return this.exponent;
+    }
 }
