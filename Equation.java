@@ -23,10 +23,15 @@ public class Equation {
             } else if (this.listTerms.get(i).get(0) == 2){
                 Cos cos = new Cos(this.listTerms.get(i).get(1), this.listTerms.get(i).get(2), this.listTerms.get(i).get(3));
                 result += cos.calculateCos(x);
+            } else if(this.listTerms.get(i).get(0) == 3) {
+                Constant constant = new Constant(this.listTerms.get(i).get(1));
+                result += constant.getConstant();
             }
         }
             
     
         return result;
     }
+
+    
 }
