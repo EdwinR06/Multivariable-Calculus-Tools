@@ -10,9 +10,14 @@ public class TestAssertionsPoint3D {
         Point3D point6 = new Point3D(1, 5, 0);
         Plane3D plane = new Plane3D(5, 1, 1, -3);
 
+        
+        final Vector3D vector = point.vectorBetweenPoints(point6);
+        double[] resultVector = {vector.getX(), vector.getY(), vector.getZ()};
+        double[] expectedVector = {0, 4, -1};
+        assertArrayEquals(expectedVector, resultVector, 0.01);
+
         final double distance = point.distanceFromPointToPlane(plane);
         final double expectedDistance = 0.7698003589195009;
-
         assertEquals(expectedDistance, distance, 0.01);
 
         Plane3D plane1 = point.planeFromPoints(point5, point6);
