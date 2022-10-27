@@ -19,4 +19,15 @@ public class Polynomial {
     public double getExponent() {
         return this.exponent;
     }
+
+    public Polynomial polynomialDerivative() {
+        final Polynomial polynomial;
+        if(this.exponent > 1) {
+            polynomial = new Polynomial(this.coefficient * this.exponent, this.exponent - 1);
+        } else {
+            polynomial = new Polynomial(this.coefficient, 0);
+        }
+        
+        return polynomial;
+    }
 }
