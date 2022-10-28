@@ -28,24 +28,14 @@ public class Workspace {
             System.out.println("Point 2");
             point2 = pointInput(scanner);
         } else {
-            System.out.println("Enter Vector One X: ");
-            double x1 = scanner.nextDouble();
-            System.out.println("Enter Vector One Y: ");
-            double y1 = scanner.nextDouble();
-            System.out.println("Enter Vector One Z: ");
-            double z1 = scanner.nextDouble();
-            vector1 = new Vector3D(x1, y1, z1);
+            System.out.println("Vector 1");
+            vector1 = vectorInput(scanner);
 
             if(operation.equals("multiply by scalar") || !operation.equals("magnitude") || !operation.equals("cylindrical coordinates") || !operation.equals("spherical coordinates")) {
                 
             } else {
-                System.out.println("Enter Vector Two X: ");
-                double x2 = scanner.nextDouble();
-                System.out.println("Enter Vector Two Y: ");
-                double y2 = scanner.nextDouble();
-                System.out.println("Enter Vector Two Z: ");
-                double z2 = scanner.nextDouble();
-                vector2 = new Vector3D(x2, y2, z2);
+                System.out.println("Vector 2");
+                vector2 = vectorInput(scanner);
             }
         } 
         
@@ -128,14 +118,27 @@ public class Workspace {
         Point3D point;
 
         System.out.println("Enter Point X: ");
-        double xP1 = scanner.nextDouble();
+        double xP = scanner.nextDouble();
         System.out.println("Enter Point Y: ");
-        double yP1 = scanner.nextDouble();
+        double yP = scanner.nextDouble();
         System.out.println("Enter Point Z: ");
-        double zP1 = scanner.nextDouble();
-        point = new Point3D(xP1, yP1, zP1);
+        double zP = scanner.nextDouble();
+        point = new Point3D(xP, yP, zP);
         return point;
 
+    }
+
+    public static Vector3D vectorInput(Scanner scanner) {
+        Vector3D vector;
+
+        System.out.println("Enter Vector X: ");
+        double xV = scanner.nextDouble();
+        System.out.println("Enter Vector Y: ");
+        double yV = scanner.nextDouble();
+        System.out.println("Enter vector Z: ");
+        double zV = scanner.nextDouble();
+        vector = new Vector3D(xV, yV, zV);
+        return vector;
     }
 
 }
