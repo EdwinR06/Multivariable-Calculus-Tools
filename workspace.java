@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import javax.xml.namespace.QName;
+
 public class Workspace {
     public static void main(String args[]) {
         ArrayList<ArrayList<Integer>> equation = new ArrayList<ArrayList <Integer>>();
@@ -21,21 +23,10 @@ public class Workspace {
         Point3D point2 = new Point3D(0, 0, 0);
         Point3D point1 = new Point3D(0, 0, 0);
         if(operation.equals("generate vector")) {
-            System.out.println("Enter Point One X: ");
-            double xP1 = scanner.nextDouble();
-            System.out.println("Enter Point One Y: ");
-            double yP1 = scanner.nextDouble();
-            System.out.println("Enter Point One Z: ");
-            double zP1 = scanner.nextDouble();
-            point1 = new Point3D(xP1, yP1, zP1);
-
-            System.out.println("Enter Point Two X: ");
-            double xP2 = scanner.nextDouble();
-            System.out.println("Enter Point Two Y: ");
-            double yP2 = scanner.nextDouble();
-            System.out.println("Enter Point Two Z: ");
-            double zP2 = scanner.nextDouble();
-            point2 = new Point3D(xP2, yP2, zP2);
+            System.out.println("Point 1");
+            point1 = pointInput(scanner);
+            System.out.println("Point 2");
+            point2 = pointInput(scanner);
         } else {
             System.out.println("Enter Vector One X: ");
             double x1 = scanner.nextDouble();
@@ -130,6 +121,20 @@ public class Workspace {
             default:
                 System.out.println("Input Valid Vector Operation");
         }
+
+    }
+
+    public static Point3D pointInput(Scanner scanner){
+        Point3D point;
+
+        System.out.println("Enter Point X: ");
+        double xP1 = scanner.nextDouble();
+        System.out.println("Enter Point Y: ");
+        double yP1 = scanner.nextDouble();
+        System.out.println("Enter Point Z: ");
+        double zP1 = scanner.nextDouble();
+        point = new Point3D(xP1, yP1, zP1);
+        return point;
 
     }
 
