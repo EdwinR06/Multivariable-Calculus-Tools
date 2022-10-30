@@ -9,6 +9,18 @@ public class VectorValuedFunction {
         this.z = z;
     }
 
+    public Equation getX() {
+        return this.x;
+    }
+
+    public Equation getY() {
+        return this.y;
+    }
+
+    public Equation getZ() {
+        return this.z;
+    }
+
 
     
 }
