@@ -38,5 +38,16 @@ public class VectorValuedFunction {
         final VectorValuedFunction vector = new VectorValuedFunction(xVelo, yVelo, zVelo);
         return vector;
     }
+
+    public VectorValuedFunction acceleration() {
+        final VectorValuedFunction velocity = this.velocity();
+
+        final Equation xAcceleration = velocity.getX().equationDerivative();
+        final Equation yAcceleration = velocity.getY().equationDerivative();
+        final Equation zAcceleration = velocity.getZ().equationDerivative();
+
+        final VectorValuedFunction vector = new VectorValuedFunction(xAcceleration, yAcceleration, zAcceleration);
+        return vector;
+    }
     
 }
