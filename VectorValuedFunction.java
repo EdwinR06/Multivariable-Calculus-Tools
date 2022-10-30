@@ -49,5 +49,14 @@ public class VectorValuedFunction {
         final VectorValuedFunction vector = new VectorValuedFunction(xAcceleration, yAcceleration, zAcceleration);
         return vector;
     }
+
+    public Vector3D unitTangentVector(double time) {
+        final VectorValuedFunction velocity = this.velocity();
+        final Vector3D vectorVelo = velocity.position(time);
+        final Vector3D unitVectorVelo = vectorVelo.normalize();
+
+        final Vector3D vector = new Vector3D(unitVectorVelo.getX(), unitVectorVelo.getY(), unitVectorVelo.getZ());
+        return vector;
+    }
     
 }
