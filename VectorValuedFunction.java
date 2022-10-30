@@ -30,6 +30,13 @@ public class VectorValuedFunction {
         return positionVector;
     }
 
+    public VectorValuedFunction velocity(){
+        final Equation xVelo = this.x.equationDerivative();
+        final Equation yVelo = this.y.equationDerivative();
+        final Equation zVelo = this.z.equationDerivative();
 
+        final VectorValuedFunction vector = new VectorValuedFunction(xVelo, yVelo, zVelo);
+        return vector;
+    }
     
 }
