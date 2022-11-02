@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import javax.xml.namespace.QName;
-
 public class Workspace {
     public static void main(String args[]) {
         ArrayList<ArrayList<Integer>> equation = new ArrayList<ArrayList <Integer>>();
