@@ -50,6 +50,13 @@ public class VectorValuedFunction {
         return vector;
     }
 
+    public double speed(double time){
+        final VectorValuedFunction velocity = this.velocity();
+
+        final Vector3D equationPoint = velocity.position(time);
+        return equationPoint.magnitude();
+    }
+
     public Vector3D unitTangentVector(double time) {
         final VectorValuedFunction velocity = this.velocity();
         final Vector3D vectorVelo = velocity.position(time);
